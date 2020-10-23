@@ -1,0 +1,351 @@
+@import url('https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap');
+
+:root {
+  --accent: #ff8800;
+  --dark: #000000;
+  --light: #ffffff;
+  --overlay: rgba(23,25,29,0.8);
+  --ease: all 0.3s ease 0s;
+}
+
+* {
+box-sizing: border-box;
+padding: 0;
+margin: 0;
+}
+
+body {
+  background-image: url("../imagens/background-original.png");
+}
+
+p, button, h1, h4 {
+  color: var(--light);
+}
+
+p, h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+}
+
+h4, button {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+h1 {
+  font-size: 52px;
+  margin-bottom: 20px;
+  color: #ff8800;
+}
+
+p, h4 {
+  font-size: 19px;
+}
+
+button {
+  cursor: pointer;
+  transition: var(--ease);
+}
+
+button:hover {
+  transform: scale(1.02);
+}
+
+.wrapper {
+display: grid;
+grid-template-columns: 1fr;
+grid-template-areas: "header" "content_banner" "content_section" "menu_section";
+} 
+
+.container {
+  max-width: 1140px;
+  margin: auto;
+}
+
+.row {
+  display: flex; 
+  flex-wrap: wrap;
+}
+
+/*Header*/
+header {
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  border-bottom: 1px solid #ffffff;
+  padding: 0px 15px;
+  z-index: 10;
+}
+
+header {
+  top: 0px;
+  position: sticky;
+  background-color: #000000;  
+} 
+
+header .row {
+justify-content: space-between;
+align-items: center;
+}
+
+header .brand-name a{
+text-decoration: none;
+font-size: 22px;
+font-weight: 600;
+color: #ffffff;
+text-transform: uppercase;
+position: relative;
+}
+
+header .navbar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+header .navbar ul li {
+display: inline-block;
+margin-left: 35px;
+}
+
+header .navbar ul li a {
+font-size: 15px;
+text-decoration: none;
+text-transform: uppercase;
+line-height: 72px;
+color: #ffffff;
+display: block; 
+font-weight: 600;
+position: relative;
+}
+
+header .navbar ul li a::before  {
+  content: '';
+  height: 3px;
+  background-color: #ffffff;
+  width: 0%;
+  position: absolute;
+  right: 0px;
+  bottom: -1px;
+  transition: all .5s ease;
+}
+/*
+header .navbar ul li a:hover::before {
+width: 100%;
+left: 0;
+}
+
+
+*/
+.venobox {
+  width: 0px; 
+}
+
+.content_section {
+  grid-area: content_section;
+  display: grid;
+  grid-template-columns: 10% 1fr 10%;
+  grid-template-areas: ". playlist_one .";
+  margin-bottom: 60px;
+}
+
+.playlist_one {
+  grid-area: playlist_one;
+}
+
+.playlist_title {
+  margin: 30px 0;
+}
+
+.videos {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-gap: 20px;
+}
+
+.video {
+  height: 180px;
+  grid-column-start: span 3;
+  position: relative;
+  transition: var(--ease); 
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border: 3px #030303fd solid;
+  /*border-radius:0px 20px 0px 20px;*/
+}
+
+.video:hover {
+transform: scale(1.16);
+}
+
+.video i {
+  cursor: pointer;
+  font-size: 60px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--light);
+  opacity: 0.85;
+  transition: var(--ease);
+}
+
+.video i:hover {
+  opacity: 1;
+}
+
+/*Footer*/
+footer {
+  padding: 5px ;
+  background-color: #000000;
+}
+
+footer .final-text {
+  flex: 0 0 100%;
+  max-width: 100%;
+  text-align: center;
+  font-size: 35px;
+  color: #ff8800;
+  font-weight: 500;
+  font-family: 'Montserrat', sans-serif;;
+}
+
+footer .social {
+  flex: 0 0 100%;
+  max-width: 100%;
+  text-align: center;
+  padding-top: 15px;
+}
+
+footer .social a {
+  color: #ff8800;
+  text-decoration: none;
+  display: inline-block;
+  margin: 0px 20px;
+  transition: all .5s ease;
+  text-decoration: none;
+  font-size: 25px;
+}
+
+footer .social a:hover {
+  color: #ffffff;
+}
+
+/*copyright*/
+.copyright {
+  background-color: #000000;
+  border-top: 1px solid #1d1d27;
+  padding: 15px;
+}
+
+.copyright p {
+  color: #ffffff;
+  margin: 0;
+  text-align: center;
+  font-weight: 400;
+  font-size: 15px;
+}
+
+
+
+/*
+css do back-to-top
+*/
+
+.scrollToTop{
+    width: 60px;
+    height: 60px;
+    display: block;
+    background: url('../imagens/topo.png') no-repeat;
+    position: fixed;
+    bottom:0;
+    right: 20px;
+
+}
+.scrollToTop:hover{
+    cursor: pointer;
+    background-position:0;
+}
+
+/*Fim  do css  scrollToTop*/
+
+/* inicio EFEITO entrada*/
+
+#fundo{
+	width:100%;
+	height:100%;
+	background-color:#000;
+	/* opacity:0.1;  */
+	position:fixed;
+	z-index:101;
+	display:none;
+}
+
+#popup{
+	width:735px;                
+	height:301px;
+	position:fixed;
+	top:50%;
+	left:50%;
+	z-index:102;
+	margin-left:-300px;
+	margin-top:-150px;
+	display:none;
+}
+
+/* fim EFEITO entrada*/
+
+/*reponsive*/
+@media only screen and (max-width: 1200px) {
+  .video {
+    grid-column-start: span 6;
+    height: 240px;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .video {
+    grid-column-start: span 12; 
+  }
+  div#logo {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat; 
+    width: 450px;
+    height: 200px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .video {
+    grid-column-start: span 16; 
+  }
+ 
+  div#logo {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat; 
+    width: 400px;
+    height: 180px;
+  }
+}
+
+
+@media only screen and (max-width: 420px) {
+  .video {
+    grid-column-start: span 16; 
+  }
+ 
+  div#logo {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat; 
+    width: 320px;
+    height: 140px;
+  }
+}
+
+
