@@ -144,10 +144,19 @@ left: 0;
 }
 
 .content_section {
+  margin-top: 20px;
   grid-area: content_section;
   display: grid;
   grid-template-columns: 10% 1fr 10%;
   grid-template-areas: ". playlist_one .";
+  margin-bottom: 60px;
+}
+.content_banner {
+  margin-top: 20px;
+  grid-area: content_banner;
+ 
+  grid-template-columns: 10% 1fr 10%;
+ 
   margin-bottom: 60px;
 }
 
@@ -280,7 +289,7 @@ css do back-to-top
 	background-color:#000;
 	/* opacity:0.1;  */
 	position:fixed;
-	z-index:101;
+	z-index:200;
 	display:none;
 }
 
@@ -290,7 +299,7 @@ css do back-to-top
 	position:fixed;
 	top:50%;
 	left:50%;
-	z-index:102;
+	z-index:201;
 	margin-left:-300px;
 	margin-top:-150px;
 	display:none;
@@ -347,5 +356,26 @@ css do back-to-top
     height: 140px;
   }
 }
-
-
+/**/
+@media screen and (max-width:375px){
+  #menu{
+	height:auto;  
+  }
+  
+  #menu a{
+	  display:block;
+	  border-bottom:1px solid #CCC;
+  }
+  
+  #menu a:last-child{
+	border:none;
+  }
+  
+  #banner{
+	 display:none;  
+  }
+  
+  #conteudo, #coluna{
+	width:100%;  
+  } 
+}
