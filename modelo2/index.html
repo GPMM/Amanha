@@ -320,6 +320,7 @@
   <script type="text/javascript" src="nivo-slider/jquery.nivo.slider.js"></script>
  
   <script>
+
     $(document).ready(function (){
      
      // $('.back-to-top').hide();
@@ -328,10 +329,13 @@
       $("#fundo,#popup").show();
       //$("#fundo,#popup").fadeIn(500); 		
 			
-			// fecha propaganda
+      // fecha propaganda
+      let autoHide = setTimeout(function(){ $("#popup,#fundo").fadeOut(500)},2000);
 			$("#popup,#fundo").click(function(){
+        clearTimeout(autoHide);
 				$("#fundo,#popup").fadeOut(500);
-			});
+      });
+      
 
       $('.venobox').venobox({
         closeColor: '#f4f4f4',

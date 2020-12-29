@@ -15,6 +15,14 @@ padding: 0;
 margin: 0;
 }
 
+.carousel-inner .carousel-item img {
+  width: 100%; /* or width: 100% !important; */
+  }
+/*Solução para a 'animação' estranha no fundo devido a diferença de altura dos itens*/
+/*.carousel-item{
+  height: 30vh;
+}*/
+
 body {
   background-image: url("../imagens/background-original.png");
 }
